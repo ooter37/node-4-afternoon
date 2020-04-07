@@ -8,7 +8,7 @@ app.use(express.json())
 
 app.use(
     session({
-        secret: SESSION_KEY,
+        session: SESSION_KEY,
         resave: false,
         saveUninitialized: true
     })
