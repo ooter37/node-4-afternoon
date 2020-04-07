@@ -6,8 +6,7 @@ const {SERVER_PORT, SESSION_KEY} = process.env
 const {checkUser} = require('./middleware/checkForSessions')
 const {read} = require('./controllers/swagController')
 const {login, register, signout, getUser} = require('./controllers/authController')
-const {add, deleteItem, checkout} = require('./controllers/cartController')
-
+const {add} = require('./controllers/cartController')
 app.use(express.json())
 app.use(
     session({
@@ -28,6 +27,4 @@ app.post('/api/login', login)
 app.post('/api/register', register)
 app.post('/api/signout', signout)
 app.get('/api/user', getUser)
-app.post('/api/cart/checkout', checkout)
 app.post('/api/add/:id', add)
-app.delete('/api/cart/:id', deleteItem)

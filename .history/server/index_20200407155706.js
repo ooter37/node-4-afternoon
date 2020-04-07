@@ -22,12 +22,10 @@ app.listen(SERVER_PORT, () => {
     console.log(`server listening port ${SERVER_PORT}`)
 })
 
-
+app.post('/api/cart/checkout', checkout)
 app.get('/api/swag', read)
 app.post('/api/login', login)
 app.post('/api/register', register)
 app.post('/api/signout', signout)
 app.get('/api/user', getUser)
-app.post('/api/cart/checkout', checkout)
 app.post('/api/add/:id', add)
-app.delete('/api/cart/:id', deleteItem)
