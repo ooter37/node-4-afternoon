@@ -17,7 +17,7 @@ app.use(
     })
 )
 app.use(checkUser)
-app.use(express.static(`${__dirname}/../build`));
+app.user(express.static(`${__dirname}/../build`))
 
 app.listen(SERVER_PORT, () => {
     console.log(`server listening port ${SERVER_PORT}`)
