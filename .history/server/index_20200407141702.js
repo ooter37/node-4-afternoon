@@ -4,8 +4,7 @@ const session = require('express-session')
 const app = express()
 const {SERVER_PORT, SESSION_KEY} = process.env
 const {checkUser} = require('./middleware/checkForSessions')
-const {read} = require('./controllers/swagController')
-const {login, register, signout, getUser} = require('./controllers/authController')
+const (read) = require('./controllers/swagController')
 
 app.use(express.json())
 app.use(
@@ -17,13 +16,7 @@ app.use(
 )
 app.use(checkUser)
 
+
 app.listen(SERVER_PORT, () => {
     console.log(`server listening port ${SERVER_PORT}`)
 })
-
-
-app.get('/api/swag', read)
-app.post('/api/login', login)
-app.post('/api/register', register)
-app.post('/api/signout', signout)
-app.get('/api/user', getUser)

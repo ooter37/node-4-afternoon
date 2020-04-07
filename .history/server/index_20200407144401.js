@@ -23,7 +23,3 @@ app.listen(SERVER_PORT, () => {
 
 
 app.get('/api/swag', read)
-app.post('/api/login', login)
-app.post('/api/register', register)
-app.post('/api/signout', signout)
-app.get('/api/user', getUser)

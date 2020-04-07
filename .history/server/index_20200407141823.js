@@ -5,7 +5,6 @@ const app = express()
 const {SERVER_PORT, SESSION_KEY} = process.env
 const {checkUser} = require('./middleware/checkForSessions')
 const {read} = require('./controllers/swagController')
-const {login, register, signout, getUser} = require('./controllers/authController')
 
 app.use(express.json())
 app.use(
@@ -23,7 +22,3 @@ app.listen(SERVER_PORT, () => {
 
 
 app.get('/api/swag', read)
-app.post('/api/login', login)
-app.post('/api/register', register)
-app.post('/api/signout', signout)
-app.get('/api/user', getUser)
